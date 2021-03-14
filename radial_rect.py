@@ -10,6 +10,7 @@ def distancelength(x1,y1,x2,y2):
 def NNplotupdate():
     ax.clear()
     ax.plot(finalX,finalY)
+    ax.plot(allthexpoints,alltheypoints,'.')
     fig.canvas.draw()
     plt.pause(0.0000001)
 
@@ -99,11 +100,11 @@ fig.show()
 fig.canvas.draw()
 
 # Parameters
-N = 21              # controls the number of points in each ray
+N = 14              # controls the number of points in each ray
 x_max = 3           # controls the length of each ray, each ray goes from 1 to x_max
-anglestep = 4       # controls the angle between each ray in degrees
+anglestep = 10       # controls the angle between each ray in degrees
 rayoffset = 0.9     # log rays start at 1. to pull each ray closer to the origin, an offset from 0 to 1 will shift them in
-M = 31              # controls the resolution of the square spread 
+M = 25              # controls the resolution of the square spread
 NNscaling = 0.9835   
 
 
@@ -111,6 +112,8 @@ NNscaling = 0.9835
 radial_rect = Points(N,x_max,anglestep,rayoffset,M)
 allthexpoints = radial_rect.Xpoints()
 alltheypoints = radial_rect.Ypoints()
+
+
 
 ############# Nearest Neighbor #############
 # Initializing
@@ -167,3 +170,4 @@ for i in range(len(twooptX)):
             #optdistance = 0
 print(pathlength(twooptX,twooptY))
 print( (pathlength(finalX,finalY)/pathlength(twooptX,twooptY)) - 1 )
+
