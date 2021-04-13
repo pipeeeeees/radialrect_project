@@ -108,14 +108,14 @@ M = 25              # controls the resolution of the square spread
 NNscaling = 0.9835   
 
 
-############# Point Spread #############
+# Point Spread
 radial_rect = Points(N,x_max,anglestep,rayoffset,M)
 allthexpoints = radial_rect.Xpoints()
 alltheypoints = radial_rect.Ypoints()
 
 
 
-############# Nearest Neighbor #############
+# Nearest Neighbor
 # Initializing
 finalX = []
 finalY = []
@@ -138,7 +138,7 @@ for i in range(len(allthexpoints)): #to cover all the points in the array
     NNplotupdate()
 print(pathlength(finalX,finalY))
 
-############# 2-opt #############
+# 2-opt
 twooptX = copy.copy(finalX)
 twooptY = copy.copy(finalY)
 oldX = 0
